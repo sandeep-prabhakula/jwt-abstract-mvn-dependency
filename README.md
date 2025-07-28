@@ -128,19 +128,20 @@ for (String key : extractedClaims.keySet()) {
 - Spring Boot
 - JJWT (Java JWT library)
 - Maven
+- Deployed on Github Packages
 
 ---
 
 ## 🧾 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 ---
 
 ## 👨‍💻 Author
 
 **Sandeep Prabhakula**  
-[GitHub](https://github.com/sandeepprabhakula) • [LinkedIn](https://www.linkedin.com/in/sandeepprabhakula)
+[GitHub](https://github.com/sandeep-prabhakula) • [LinkedIn](https://www.linkedin.com/in/sandeep-prabhakula)
 
 ---
 
