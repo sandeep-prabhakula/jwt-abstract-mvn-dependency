@@ -1,7 +1,7 @@
 
 # JWT Abstract - Simplified JWT Token Handling for Spring Boot
 
-[![Github Packages](https://github.com/sandeep-prabhakula/jwt-abstract-mvn-dependency/packages/2594726)](https://search.maven.org/artifact/com.sandeepprabhakula/jwt-abstract)
+[![Github Packages](https://github.com/sandeep-prabhakula/jwt-abstract-mvn-dependency/packages/2594726)](https://github.com/sandeep-prabhakula/jwt-abstract-mvn-dependency/packages/2594726)
 
 ## 🚀 Overview
 
