@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+  
+
+ 
+
+  <pluginGroups>
+    
+  </pluginGroups>
+
+  <proxies>
+   
+  </proxies>
+
+  <servers>
+    
+    <server>
+    <id>central</id>
+      <username>sonatype username</username>
+      <password>sonatype password</password>
+      </server>
+
+       <!-- <server>
+      <id>github</id>
+      <username>github username</username>
+      <password>github token</password>
+    </server> -->
+    <server>
+      <id>gpg.passphrase</id>
+      <passphrase>PassPhrase created while generating key</passphrase>
+    </server>
+    
+  </servers>
+
+  <mirrors>
+    <mirror>
+      <id>maven-default-http-blocker</id>
+      <mirrorOf>external:http:*</mirrorOf>
+      <name>Pseudo repository to mirror external repositories initially using HTTP.</name>
+      <url>http://0.0.0.0/</url>
+      <blocked>true</blocked>
+    </mirror>
+  </mirrors>
+
+
+  <profiles>
+    <profile>
+      <id>gpg</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <gpg.executable>gpg</gpg.executable>
+        <gpg.passphrase>PassPhrase created while generating key</gpg.passphrase>
+      </properties>
+    </profile>
+  </profiles>
+
+</settings>

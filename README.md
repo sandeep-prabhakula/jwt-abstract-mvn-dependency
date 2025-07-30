@@ -17,9 +17,9 @@ Add the following dependency to your `pom.xml`:
 
 ```xml
 <dependency>
-  <groupId>com.sandeepprabhakula</groupId>
+  <groupId>io.github.sandeep-prabhakula</groupId>
   <artifactId>jwt-abstract</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
@@ -132,7 +132,7 @@ for (String key : extractedClaims.keySet()) {
 - Spring Boot
 - JJWT (Java JWT library)
 - Maven
-- Deployed on Github Packages
+- Deployed on Github Packages/Maven Central Repository
 
 ---
 
