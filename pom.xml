@@ -7,16 +7,25 @@
     <version>3.5.4</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>com.sandeepprabhakula</groupId>
+  <groupId>io.github.sandeep-prabhakula</groupId>
   <artifactId>jwt-abstract</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>jwt-abstract</name>
-  <url>http://maven.apache.org</url>
+  <name>io.github.sandeep-prabhakula:jwt-abstract</name>
+  <description>A application used as an example on how to set up pushing
+    its components to the Central Repository.</description>
+  <url>https://github.com/sandeep-prabhakula/jwt-abstract-mvn-dependency</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+    <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
+    <nexus-staging-maven-plugin.version>1.6.7</nexus-staging-maven-plugin.version>
+    <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
+    <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+    <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
   </properties>
 
   <dependencies>
@@ -53,11 +62,119 @@
     </dependency>
   </dependencies>
 
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Sandeep Prabhakula</name>
+      <email>sandeepprabhakula10@gmail.com</email>
+      <organizationUrl>https://github.com/sandeep-prabhakula/jwt-abstract-mvn-dependency</organizationUrl>
+    </developer>
+  </developers>
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>${central-publishing-maven-plugin.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>central</publishingServerId>
+          <tokenAuth>true</tokenAuth>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${maven-source-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${maven-javadoc-plugin.version}</version>
+        <configuration>
+          <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>${maven-gpg-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+            <configuration>
+
+              <gpgArguments>
+                <arg>--pinentry-mode</arg>
+                <arg>loopback</arg>
+              </gpgArguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>${nexus-staging-maven-plugin.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>central</serverId>
+          <nexusUrl>https://repo1.maven.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
   <distributionManagement>
+    <snapshotRepository>
+      <id>central</id>
+      <url>https://repo1.maven.org/content/maven2</url>
+    </snapshotRepository>
     <repository>
-      <id>github</id>
-      <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/sandeep-prabhakula/jwt-abstract-mvn-dependency</url>
+      <id>central</id>
+      <url>https://repo1.maven.org/content/maven2</url>
     </repository>
   </distributionManagement>
+  <scm>
+    <connection>scm:git:git://github.com/sandeep-prabhakula/jwt-abstract-mvn-dependency.git</connection>
+    <developerConnection>scm:git:ssh://github.com:sandeep-prabhakula/jwt-abstract-mvn-dependency.git</developerConnection>
+    <url>http://github.com/sandeep-prabhakula/jwt-abstract-mvn-dependency/tree/master</url>
+  </scm>
 </project>
