@@ -9,12 +9,11 @@
   </parent>
   <groupId>io.github.sandeep-prabhakula</groupId>
   <artifactId>jwt-abstract</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
 
   <name>io.github.sandeep-prabhakula:jwt-abstract</name>
-  <description>A application used as an example on how to set up pushing
-    its components to the Central Repository.</description>
+  <description>A dependency developed for generating the JWT tokens and extracting claims from the token with abstracting the lengthy boilerplate code</description>
   <url>https://github.com/sandeep-prabhakula/jwt-abstract-mvn-dependency</url>
 
   <properties>
